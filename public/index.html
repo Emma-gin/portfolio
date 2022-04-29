@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>Portfolio</title>
+    </head>
+    <body>
+        <header id="home" class="home">
+            <nav id="nav_bar">
+                <ul>
+                    <li>
+                        <a class="link_nav" href="#home">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="link_nav" href="#section_skills"
+                            >Compétences</a
+                        >
+                    </li>
+                    <li>
+                        <a class="link_nav" href="#section_projects">Projets</a>
+                    </li>
+                    <li>
+                        <a class="link_nav" href="#section_contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <h1>Développeuse Web</h1>
+        </header>
+        <button id="btn_burger_menu" class="burger_menu">
+            <span class="bar_burger_menu"></span>
+        </button>
+        <button id="btn_back_top" class="btn_back_top">&#8679;</button>
+        <button class="btn_dark_mode" id="btn_dark_mode">
+            <div id="div_btn_dark" class="div_btn_dark">
+                <div id="div_btn_dark_inside" class="div_btn_dark_inside"></div>
+            </div>
+        </button>
+        <main>
+            <section id="section_skills">
+                <h2>Compétences</h2>
+                <div class="container_all_skills">
+                    <div
+                        id="container_skills"
+                        data-aos="fade-up-right"
+                        class="container_skills container_skills_1"
+                    >
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                    </div>
+                    <div
+                        data-aos="fade-up-right"
+                        class="container_skills container_skills_2"
+                    >
+                        <span>Javascript</span>
+                        <span>JQuery</span>
+                        <span>VueJS</span>
+                        <span>Node JS</span>
+                    </div>
+                    <div
+                        data-aos="fade-up"
+                        class="container_skills container_skills_3"
+                    >
+                        <span>SQL</span>
+                    </div>
+                    <div
+                        data-aos="fade-up-left"
+                        class="container_skills container_skills_4"
+                    >
+                        <span>PHP</span>
+                        <span>Symfony</span>
+                    </div>
+                    <div
+                        data-aos="fade-up-left"
+                        class="container_skills container_skills_5"
+                    >
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </section>
+            <section id="section_projects">
+                <h2>Projets</h2>
+                <div class="container_all_projects">
+                    <div data-aos="fade-up-right" class="container_project">
+                        <div class="container_img_project">
+                            <img
+                                src="/assets/images/restaurant.png"
+                                alt="image projet 1"
+                            />
+                        </div>
+                        <span>Site vitrine restaurant</span>
+                        <span>HTML5 CSS3 Javascript</span>
+                        <span>lien github</span>
+                    </div>
+                    <div data-aos="fade-up" class="container_project">
+                        <div class="container_img_project">
+                            <img
+                                src="/assets/images/mixcocktails.png"
+                                alt="image projet 2"
+                            />
+                        </div>
+                        <span>Site recette cocktails</span>
+                        <span>Vue3JS CSS3 Javascript</span>
+                        <span>Api DBCocktail</span>
+                        <span>lien github</span>
+                    </div>
+                    <div data-aos="fade-up-left" class="container_project">
+                        <div class="container_img_project">
+                            <img
+                                src="/assets/images/symfony_blog.png"
+                                alt="image projet 3"
+                            />
+                        </div>
+                        <span>Blog Symfony5.4.4</span>
+                        <span>PHP SQL</span>
+                        <span>lien github</span>
+                    </div>
+                </div>
+            </section>
+            <section id="section_contact">
+                <h2>Contact</h2>
+                <form id="contact_form" action="">
+                    <div class="container_field">
+                        <label for="first_name">
+                            <i class="fa-solid fa-user"></i>
+                        </label>
+                        <input
+                            id="last_name"
+                            type="text"
+                            name="last_name"
+                            placeholder="Votre nom"
+                        />
+                    </div>
+                    <div class="container_field">
+                        <label for="first_name">
+                            <i class="fa-solid fa-user"></i>
+                        </label>
+                        <input
+                            id="first_name"
+                            type="text"
+                            name="first_name"
+                            placeholder="Votre nom"
+                        />
+                    </div>                    
+                    <div class="container_field">
+                        <label for="email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </label>
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="Votre email"
+                        />
+                    </div>
+                    <div class="container_field">
+                        <label for="subject">
+                            <i class="fa-solid fa-tag"></i>
+                        </label>
+                        <input
+                            id="subject"
+                            type="text"
+                            name="subject"
+                            placeholder="Sujet"
+                        />
+                    </div>
+                    <div class="container_field_message">
+                        <textarea
+                            id="message"
+                            type="text"
+                            name="message"
+                            placeholder="Votre message"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn_form">Envoyer</button>
+                </form>
+            </section>
+        </main>
+        <footer><i class="fa-regular fa-copyright"></i>Portfolio</footer>
+        <script
+            src="https://kit.fontawesome.com/6c3530af61.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
