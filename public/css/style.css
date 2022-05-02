@@ -6,10 +6,16 @@
 
 :root {
     font-size: 10px;
+    --dark-mode-background:#262425;
+    --text-color: #323232;
+    --text-color-dark-mode: #e6e6e6;
+    --decoration-gradient:linear-gradient(152deg, rgba(0,0,0,1) 0%, rgba(128,128,128,1) 0%, rgba(4,242,224,1) 100%);
 }
 
 body {
+    color: var(--text-color);
     cursor: default;
+    background: linear-gradient(152deg, #a6d4f966 20%, #82B0D9 20%, #4198ce 60%);
 }
 
 /* dark mode */
@@ -23,13 +29,11 @@ body {
     padding: 10px;
 }
 
-/* class image svg for dark mode */
-
 .div_btn_dark {
     width: 20px;
     height: 40px;
     border-radius: 15%;
-    background-color: black;
+    background: var(--dark-mode-background);
     display: flex;
     justify-content: center;
 }
@@ -43,18 +47,36 @@ body {
 }
 
 .dark_mode_body {
-    background-color: black;
-    color: white;
+    background: var(--dark-mode-background);
+    color: var(--text-color-dark-mode);
 }
 
 .div_dark_mode {
-    background-color: white;
+    background-color: var(--text-color-dark-mode) ;
     display: flex;
     align-items: flex-end;
 }
 
 .div_inside_dark_mode {
     background-color: black;
+}
+
+.link_nav_dark_mode{
+    color: var(--text-color-dark-mode) !important;
+}
+
+.input_dark_mode:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px var(--dark-mode-background) inset !important;
+    -moz-box-shadow: 0 0 0 100px var(--dark-mode-background) inset !important;
+    box-shadow: 0 0 0 100px var(--dark-mode-background) inset !important;
+}
+
+.text_dark_color_dark_mode{
+    color: var(--text-color);
+}
+
+.text_ligth_color_dark_mode{
+    color: var(--text-color-dark-mode);
 }
 
 /* back to top */
@@ -66,7 +88,7 @@ body {
     cursor: pointer;
     border: none;
     font-size: 3.9rem;
-    padding: 10px;
+    padding: 0 10px;
     background-color: transparent;
 }
 
@@ -102,23 +124,100 @@ nav ul li {
 .link_nav {
     text-decoration: none;
     cursor: pointer;
-    color: black;
+    color: var(--text-color);
+    position: relative;
 }
 
-.link_nav:hover {
-    text-decoration: underline;
+.link_nav:hover::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--decoration-gradient);
 }
 
-h1 {
-    align-self: center;
-    margin-bottom: 20%;
-    font-size: 3em;
+.burger_menu{
+    display: none;
+}
+
+
+/* animation title */
+@keyframes showTitleTopText{
+    0% {transform: translate3d(0, 100%,0);}
+    40%, 60% {
+        transform: translate3d(0,50%,0);
+    }
+    100%{
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes showTitleBottomText{
+    0%{transform: translate3d(0, -100%,0);}
+    100%{
+        transform: translate3d(0,0,0);
+    }
+}
+
+.animated_title{
+    font-size: 2em;
+    height: 60vmin;
+    width: 80vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.animated_title > div {
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.animated_title > div div {
+    padding: 3vmin 0;
+    position: absolute;
+}
+
+.animated_title > div div span {
+    display: block;
+}
+
+.animated_title > div.title_text_top{
+    border-bottom: 1px solid #000;
+    top: 0;
+}
+
+.animated_title > div.title_text_top div {
+    animation: showTitleTopText 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    transform: translate(0, 100%);
+}
+
+
+
+.animated_title > div.title_text_bottom{
+    bottom: 0;
+}
+
+.animated_title > div.title_text_bottom div{
+    animation: showTitleBottomText 0.5s;
+    animation-delay: 1.75s;
+    animation-fill-mode: forwards;
+    top: 0;
+    transform: translate(0, -100%);
 }
 
 /* section */
 
 section {
-    /* margin: 15% 0; */
     font-size: 2rem;
 }
 
@@ -146,25 +245,22 @@ h2 {
 .container_skills {
     width: 200px;
     height: 200px;
-    border: 1px solid rgb(0, 0, 0);
-    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #e6e6e6;
     color: black;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* shadow dark mode */
+.container_skills:hover{
+    background: var(--decoration-gradient);
+    box-shadow: -10px  5px 5px rgba(0, 0, 0, 0.5);
 
-/* .container_skills_shadow_dark_mode{
-    box-shadow: 10px 5px 5px white;
-    border: 1px solid rgba(0, 0, 0, 0.516);
-
-
-} */
+}
 
 .container_skills_1,
 .container_skills_3,
@@ -187,12 +283,13 @@ h2 {
 
 .container_project {
     width: 30%;
-    border: 1px solid rgba(0, 0, 0, 0.182);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: #e6e6e6;
 }
 
 .container_img_project {
@@ -225,7 +322,7 @@ form {
 .container_field,
 .container_field_message {
     width: 50%;
-    border-bottom: 1px solid rgb(128, 128, 128);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -245,7 +342,7 @@ label {
 }
 
 label i {
-    color: grey;
+    color: var(--text-color);
     font-size: 1.5em;
     border-radius: 50%;
     padding: 8px;
@@ -262,10 +359,14 @@ textarea {
     background-color: transparent;
 }
 
+::placeholder{
+    color: rgba(0, 0, 0, 0.40);
+}
+
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 100px #fff inset !important;
-    -moz-box-shadow: 0 0 0 100px #fff inset !important;
-    box-shadow: 0 0 0 100px #fff inset !important;
+    -webkit-box-shadow: 0 0 0 100px #4198CE inset;
+    -moz-box-shadow: 0 0 0 100px #4198CE inset;
+    box-shadow: 0 0 0 100px #4198CE inset;
 }
 
 textarea {
@@ -273,15 +374,24 @@ textarea {
 }
 
 .container_field:focus-within label i {
-    color: black;
+    color: rgba(0, 0, 0, 0.8);
     background-color: aqua;
     box-shadow: 5px 5px 5px black;
 }
 
 .btn_form {
+    border: none;
     cursor: pointer;
-    padding: 0.5em;
+    padding: 0.8em;
     border-radius: 1em;
+    background-color: #ACD1F2;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn_form:focus{
+    box-shadow: -10px -5px 5px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+
 }
 
 /* footer */
@@ -290,7 +400,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(128, 128, 128, 0.455);
     height: 50px;
     font-size: 1.7rem;
 }

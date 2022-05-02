@@ -1,5 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
+const validator = require('validator');
 const app = express();
 require("dotenv").config();
 
@@ -16,38 +17,52 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     console.log(req.body)
-    lastName = req.body.lastName;
-    firstName = req.body.firstName;
-    email = req.body.email;
-    subject = req.body.subject;
-    message = req.body.message;
+    let lastName = req.body.lastName;
+    let firstName = req.body.firstName;
+    let email = req.body.email;
+    let subject = req.body.subject;
+    let message = req.body.message;
 
     const transporter = nodemailer.createTransport({
         host: 'smtp.hostinger.com',
-        port: 465,
-        secure: true,
+        port: 587,
+        secure: false,
 
-        // service: "gmail",
     
         auth: {
-            user: "contact@emma-dufrenay.com",
+            user:'contact@emma-dufrenay.com' ,
             pass: process.env.PASSWORD,
         },
     })
 
     const mailOptions = {
-        from:req.body.email,
+        from: 'test@emma-dufrenay.com',
         to: 'contact@emma-dufrenay.com',
-        subject: `Message from ${req.body.email}: ${req.body.subject}`,
-        text: req.body.message
+        subject: `Message from ${email}: ${subject}`,
+        text: message
     }
 
-    transporter.sendMail(mailOptions, (error, info) => {
+    transporter.sendMail(mailOptions, (error) => {
         if (error) {
             console.log('error: ' + error)
+        } 
+        else if (!validator.isAlphanumeric(lastName)) {
+            res.send('error last name')
+        }
+        else if (!validator.isAlphanumeric(firstName)) {
+            res.send('error first name')
+        }
+        else if (!validator.isAlphanumeric(subject)) {
+            res.send('error sujet')
+        }
+        else if (!validator.isAlphanumeric(message)) {
+            res.send('error message')
+        }
+        else if (!validator.isEmail(email)) {
+            res.send('error email')
+        
         } else {
-            console.log('Email sent: ' + info)
-            res.send('success')
+            res.send('success!!!')
         }
     })
 })

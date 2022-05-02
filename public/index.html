@@ -31,7 +31,17 @@
                     </li>
                 </ul>
             </nav>
-            <h1>Développeuse Web</h1>
+            <h1 class="animated_title">
+                <div class="title_text_top">
+                    <div>
+                        <span>Développeuse Web</span>
+                        <span>Web Mobile</span>
+                    </div>
+                </div>
+                <div class="title_text_bottom">
+                    <div>Bienvenue</div>
+                </div>
+            </h1>
         </header>
         <button id="btn_burger_menu" class="burger_menu">
             <span class="bar_burger_menu"></span>
@@ -96,7 +106,7 @@
                         </div>
                         <span>Site vitrine restaurant</span>
                         <span>HTML5 CSS3 Javascript</span>
-                        <span>lien github</span>
+                        <a href="https://github.com/Emma-gin/restaurant">GitHub</a>
                     </div>
                     <div data-aos="fade-up" class="container_project">
                         <div class="container_img_project">
@@ -119,7 +129,7 @@
                         </div>
                         <span>Blog Symfony5.4.4</span>
                         <span>PHP SQL</span>
-                        <span>lien github</span>
+                        <a href="https://github.com/Emma-gin/BlogSymfony">GitHub</a>
                     </div>
                 </div>
             </section>
@@ -131,10 +141,11 @@
                             <i class="fa-solid fa-user"></i>
                         </label>
                         <input
+                            required
                             id="last_name"
                             type="text"
                             name="last_name"
-                            placeholder="Votre nom"
+                            placeholder="Votre nom..."
                         />
                     </div>
                     <div class="container_field">
@@ -142,21 +153,23 @@
                             <i class="fa-solid fa-user"></i>
                         </label>
                         <input
+                            required
                             id="first_name"
                             type="text"
                             name="first_name"
-                            placeholder="Votre nom"
+                            placeholder="Votre prénom..."
                         />
-                    </div>                    
+                    </div>
                     <div class="container_field">
                         <label for="email">
                             <i class="fa-solid fa-envelope"></i>
                         </label>
                         <input
+                            required
                             id="email"
                             type="email"
                             name="email"
-                            placeholder="Votre email"
+                            placeholder="Votre email..."
                         />
                     </div>
                     <div class="container_field">
@@ -164,21 +177,25 @@
                             <i class="fa-solid fa-tag"></i>
                         </label>
                         <input
+                            required
                             id="subject"
                             type="text"
                             name="subject"
-                            placeholder="Sujet"
+                            placeholder="Sujet..."
                         />
                     </div>
                     <div class="container_field_message">
                         <textarea
+                            required
                             id="message"
                             type="text"
                             name="message"
-                            placeholder="Votre message"
+                            placeholder="Votre message..."
                         ></textarea>
                     </div>
-                    <button type="submit" class="btn_form">Envoyer</button>
+                    <button type="submit" class="btn_form">
+                        Envoyer
+                    </button>
                 </form>
             </section>
         </main>
