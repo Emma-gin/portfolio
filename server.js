@@ -16,7 +16,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-    console.log(req.body)
     let lastName = req.body.lastName;
     let firstName = req.body.firstName;
     let email = req.body.email;
@@ -24,20 +23,20 @@ app.post('/', (req, res) => {
     let message = req.body.message;
 
     const transporter = nodemailer.createTransport({
-        host: 'smtp.hostinger.com',
+        host: process.env.HOST,
         port: 587,
         secure: false,
 
     
         auth: {
-            user:'contact@emma-dufrenay.com' ,
+            user:process.env.USER ,
             pass: process.env.PASSWORD,
         },
     })
 
     const mailOptions = {
-        from: 'test@emma-dufrenay.com',
-        to: 'contact@emma-dufrenay.com',
+        from: process.env.EMAIL_FROM,
+        to: process.env.EMAIL_TO,
         subject: `Message from ${email}: ${subject}`,
         text: message
     }

@@ -7,6 +7,7 @@ const containerSkills = document.getElementById("container_skills");
 const linkNav = document.querySelectorAll(".link_nav");
 const input = document.querySelectorAll("input");
 const labelIcon = document.querySelectorAll("i");
+const titleBorder = document.querySelector(".title_text_top");
 
 //variable for back to top
 const btnBackToTop = document.getElementById("btn_back_top");
@@ -23,6 +24,22 @@ let email = document.getElementById("email");
 let subject = document.getElementById("subject");
 let message = document.getElementById("message");
 
+function changeColorInsideInput() {
+    if (body.classList.contains('dark_mode_body')) {
+        document.documentElement.style.setProperty(
+            "--input-placeholder",
+            "#e6e6e6"
+        );        
+    } else {
+        document.documentElement.style.setProperty(
+            "--input-placeholder",
+            "#323232"
+        ); 
+    }
+
+}
+
+
 //toggle switch dark/light mode
 btnDarkMode.addEventListener("click", () => {
     //style btn darkmode
@@ -30,20 +47,23 @@ btnDarkMode.addEventListener("click", () => {
     divInsideBtnDarkMode.classList.toggle("div_inside_dark_mode");
     //style body
     body.classList.toggle("dark_mode_body");
+    //style border
+    titleBorder.classList.toggle("border_dark_mode");
     //style nav
     linkNav.forEach((element) => {
         element.classList.toggle("link_nav_dark_mode");
     });
     //style skills
     containerSkills.classList.toggle("container_skills_shadow_dark_mode");
-
     //style form
     input.forEach((e) => {
         e.classList.toggle("input_dark_mode");
+        e.classList.toggle("border_dark_mode");
     });
     labelIcon.forEach((icon) => {
         icon.classList.toggle("text_ligth_color_dark_mode");
     });
+    changeColorInsideInput();
 });
 
 //back to top
@@ -106,24 +126,17 @@ contactForm.addEventListener("submit", (e) => {
             email.value = "";
             subject.value = "";
             message.value = "";
-        }
-        else if (xhr.responseText == 'error last name') {
-            alert('Le champ \'Nom\' contient une erreur .')
-        }
-        else if (xhr.responseText == 'error first name') {
-            alert('Le champ \'Prénom\' contient une erreur .')
-        }
-        else if (xhr.responseText == 'error sujet') {
-            alert('Le champ \'Sujet\' contient une erreur .')
-        }
-        else if (xhr.responseText == 'error email') {
-            alert('Le champ \'Email\' contient une erreur .')
-        }
-        else if (xhr.responseText == 'error message') {
-            alert('Le champ \'Message\' contient une erreur .')
-        }
-        
-        else {
+        } else if (xhr.responseText == "error last name") {
+            alert("Le champ 'Nom' contient une erreur .");
+        } else if (xhr.responseText == "error first name") {
+            alert("Le champ 'Prénom' contient une erreur .");
+        } else if (xhr.responseText == "error sujet") {
+            alert("Le champ 'Sujet' contient une erreur .");
+        } else if (xhr.responseText == "error email") {
+            alert("Le champ 'Email' contient une erreur .");
+        } else if (xhr.responseText == "error message") {
+            alert("Le champ 'Message' contient une erreur .");
+        } else {
             alert("Une erreur est survenue");
         }
     };

@@ -6,6 +6,7 @@
 
 :root {
     font-size: 10px;
+    --input-placeholder:rgba(0, 0, 0, 0.40);
     --dark-mode-background:#262425;
     --text-color: #323232;
     --text-color-dark-mode: #e6e6e6;
@@ -13,9 +14,10 @@
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     color: var(--text-color);
     cursor: default;
-    background: linear-gradient(152deg, #a6d4f966 20%, #82B0D9 20%, #4198ce 60%);
+    background: linear-gradient(152deg, #a6d4f966 20%, #8ebfea 20%, #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
 }
 
 /* dark mode */
@@ -76,6 +78,11 @@ body {
 }
 
 .text_ligth_color_dark_mode{
+    color: var(--text-color-dark-mode) !important;
+}
+
+.border_dark_mode{
+    border-bottom: 1px solid var(--text-color-dark-mode) !important;
     color: var(--text-color-dark-mode);
 }
 
@@ -146,9 +153,8 @@ nav ul li {
 
 /* animation title */
 @keyframes showTitleTopText{
-    0% {transform: translate3d(0, 100%,0);}
-    40%, 60% {
-        transform: translate3d(0,50%,0);
+    0% {
+        transform: translate3d(0, 100%,0);
     }
     100%{
         transform: translate3d(0,0,0);
@@ -156,16 +162,19 @@ nav ul li {
 }
 
 @keyframes showTitleBottomText{
-    0%{transform: translate3d(0, -100%,0);}
+    0%{
+        transform: translate3d(0, -100%,0);
+    }
     100%{
         transform: translate3d(0,0,0);
     }
 }
 
 .animated_title{
-    font-size: 2em;
+    font-family: 'Updock', 'Roboto', sans-serif;
+    font-size: 3em;
     height: 60vmin;
-    width: 80vmin;
+    width: 70vmin;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -180,7 +189,7 @@ nav ul li {
 }
 
 .animated_title > div div {
-    padding: 3vmin 0;
+    padding: 3vmin 1vmin;
     position: absolute;
 }
 
@@ -201,8 +210,6 @@ nav ul li {
     transform: translate(0, 100%);
 }
 
-
-
 .animated_title > div.title_text_bottom{
     bottom: 0;
 }
@@ -219,12 +226,13 @@ nav ul li {
 
 section {
     font-size: 2rem;
+    margin: 2em 0;
 }
 
 h2 {
     text-align: center;
     margin: 30px 0;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 /* section_skills */
@@ -257,7 +265,7 @@ h2 {
 }
 
 .container_skills:hover{
-    background: var(--decoration-gradient);
+    background: linear-gradient( #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
     box-shadow: -10px  5px 5px rgba(0, 0, 0, 0.5);
 
 }
@@ -292,6 +300,22 @@ h2 {
     background-color: #e6e6e6;
 }
 
+.container_project a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container_text_project{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .container_img_project {
     width: 100%;
 }
@@ -304,14 +328,12 @@ h2 {
 /* section_contact */
 
 #section_contact {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 form {
-    height: 80vh;
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -360,7 +382,7 @@ textarea {
 }
 
 ::placeholder{
-    color: rgba(0, 0, 0, 0.40);
+    color: var(--input-placeholder);
 }
 
 input:-webkit-autofill {
@@ -374,9 +396,9 @@ textarea {
 }
 
 .container_field:focus-within label i {
-    color: rgba(0, 0, 0, 0.8);
-    background-color: aqua;
-    box-shadow: 5px 5px 5px black;
+    color: rgba(0, 0, 0, 0.8) !important;
+    background-color: aqua !important;
+    box-shadow: 5px 5px 5px black !important;
 }
 
 .btn_form {
@@ -386,6 +408,7 @@ textarea {
     border-radius: 1em;
     background-color: #ACD1F2;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
 }
 
 .btn_form:focus{
@@ -398,11 +421,24 @@ textarea {
 
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 100px;
     font-size: 1.7rem;
+    margin-top: 60px;
 }
+
+footer a {
+    text-decoration: none;
+}
+
+footer a i{
+    font-size: 2em;
+    margin: 0.2em;
+}
+
+
 
 /* responsive */
 
@@ -521,6 +557,11 @@ footer {
 }
 
 @media (max-width: 600px) {
+
+    .animated_title{
+        font-size: 2em;
+    }
+
     h2 {
         font-size: 1.5em;
     }
@@ -542,13 +583,21 @@ footer {
     /* section projects */
 
     .container_all_projects {
-        height: 150vh;
+        width: 100%;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
     }
 
+    .container_project{
+        margin-bottom: 1em;
+        width: 60%;
+    }
+
+    /* section contact */
     form {
         width: 100%;
     }
+
+    
 }

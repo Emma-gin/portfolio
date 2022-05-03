@@ -4,6 +4,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300&family=Roboto&family=Roboto+Serif:wght@200&family=Updock&display=swap"
+            rel="stylesheet"
+        />
         <link
             href="https://unpkg.com/aos@2.3.1/dist/aos.css"
             rel="stylesheet"
@@ -35,7 +41,6 @@
                 <div class="title_text_top">
                     <div>
                         <span>Développeuse Web</span>
-                        <span>Web Mobile</span>
                     </div>
                 </div>
                 <div class="title_text_bottom">
@@ -43,6 +48,7 @@
                 </div>
             </h1>
         </header>
+
         <button id="btn_burger_menu" class="burger_menu">
             <span class="bar_burger_menu"></span>
         </button>
@@ -52,6 +58,7 @@
                 <div id="div_btn_dark_inside" class="div_btn_dark_inside"></div>
             </div>
         </button>
+
         <main>
             <section id="section_skills">
                 <h2>Compétences</h2>
@@ -94,45 +101,60 @@
                     </div>
                 </div>
             </section>
+
             <section id="section_projects">
                 <h2>Projets</h2>
                 <div class="container_all_projects">
                     <div data-aos="fade-up-right" class="container_project">
                         <div class="container_img_project">
+                        <a href="https://github.com/Emma-gin/restaurant">
                             <img
                                 src="/assets/images/restaurant.png"
                                 alt="image projet 1"
                             />
-                        </div>
-                        <span>Site vitrine restaurant</span>
-                        <span>HTML5 CSS3 Javascript</span>
-                        <a href="https://github.com/Emma-gin/restaurant">GitHub</a>
+                            </div>
+                            <div class="container_text_project">
+                                <span>Site vitrine restaurant</span>
+                                <span>HTML5 CSS3 Javascript</span>                                 
+                            </div>
+                        </a
+                        >
                     </div>
                     <div data-aos="fade-up" class="container_project">
                         <div class="container_img_project">
+                        <a href="https://github.com/Emma-gin/mix_cocktails">
+                            
                             <img
                                 src="/assets/images/mixcocktails.png"
                                 alt="image projet 2"
                             />
-                        </div>
-                        <span>Site recette cocktails</span>
-                        <span>Vue3JS CSS3 Javascript</span>
-                        <span>Api DBCocktail</span>
-                        <span>lien github</span>
+                            </div>
+                            <div class="container_text_project">
+                                <span>Site recette cocktails</span>
+                                <span>Vue3JS CSS3 Javascript</span>
+                                <span>Api DBCocktail</span>                                
+                            </div>
+                        </a
+                        >
                     </div>
                     <div data-aos="fade-up-left" class="container_project">
                         <div class="container_img_project">
+                        <a href="https://github.com/Emma-gin/BlogSymfony">
                             <img
                                 src="/assets/images/symfony_blog.png"
                                 alt="image projet 3"
                             />
-                        </div>
-                        <span>Blog Symfony5.4.4</span>
-                        <span>PHP SQL</span>
-                        <a href="https://github.com/Emma-gin/BlogSymfony">GitHub</a>
+                            </div>
+                            <div class="container_text_project">
+                                <span>Blog Symfony5.4.4</span>
+                                <span>PHP SQL</span>                                
+                            </div>                                                        
+                        </a
+                        >
                     </div>
                 </div>
             </section>
+
             <section id="section_contact">
                 <h2>Contact</h2>
                 <form id="contact_form" action="">
@@ -193,18 +215,30 @@
                             placeholder="Votre message..."
                         ></textarea>
                     </div>
-                    <button type="submit" class="btn_form">
-                        Envoyer
-                    </button>
+                    <button type="submit" class="btn_form">Envoyer</button>
                 </form>
             </section>
         </main>
-        <footer><i class="fa-regular fa-copyright"></i>Portfolio</footer>
+
+        <footer>
+            <div class="container_icon_footer">
+                <a href="www.linkedin.com/in/emma-dufrenay">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Emma-gin">
+                    <i class="fa-brands fa-github-square"></i>
+                </a>
+            </div>
+            <div>
+                <i class="fa-regular fa-copyright"></i>
+                <span>Portfolio Emmanuelle Dufrenay</span>
+            </div>
+        </footer>
+        
         <script
             src="https://kit.fontawesome.com/6c3530af61.js"
             crossorigin="anonymous"
         ></script>
-
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
