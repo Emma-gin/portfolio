@@ -594,6 +594,18 @@ footer a i{
         box-shadow: none;
     }
 
+    .container_skills_1,
+    .container_skills_3,
+    .container_skills_5 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .container_skills_2,
+    .container_skills_4 {
+        margin-bottom: 5px;
+    }
+
     /* section projects */
 
     .container_all_projects {
