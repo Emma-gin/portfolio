@@ -267,7 +267,6 @@ h2 {
 .container_skills:hover{
     background: linear-gradient( #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
     box-shadow: -10px  5px 5px rgba(0, 0, 0, 0.5);
-
 }
 
 .container_skills_1,
@@ -304,6 +303,7 @@ h2 {
     text-decoration: none;
     color: var(--text-color);
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -558,6 +558,11 @@ footer a i{
 
 @media (max-width: 600px) {
 
+    body {
+
+        background: linear-gradient(152deg, #a6d4f966 10%, #8ebfea 10%, #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
+    }
+
     .animated_title{
         font-size: 2em;
     }
@@ -580,6 +585,11 @@ footer a i{
         height: 150px;
     }
 
+    .container_skills:hover{
+        background: var(--text-color-dark-mode);
+        box-shadow: none;
+    }
+
     /* section projects */
 
     .container_all_projects {
@@ -597,6 +607,14 @@ footer a i{
     /* section contact */
     form {
         width: 100%;
+    }
+
+    footer .fa-linkedin{
+        color: #dde7f0 ;
+    }
+
+    footer .fa-github-square{
+        color: #d3d3d3;
     }
 
     
