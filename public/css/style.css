@@ -601,7 +601,7 @@ footer a i{
 
     .container_project{
         margin-bottom: 1em;
-        width: 60%;
+        width: 70%;
     }
 
     /* section contact */
@@ -610,11 +610,11 @@ footer a i{
     }
 
     footer .fa-linkedin{
-        color: #dde7f0 ;
+        color: #1293d2 ;
     }
 
     footer .fa-github-square{
-        color: #d3d3d3;
+        color: #a9a8a8;
     }
 
     
