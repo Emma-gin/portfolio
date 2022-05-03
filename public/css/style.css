@@ -6,6 +6,7 @@
 
 :root {
     font-size: 10px;
+    --burger-color:#323232;
     --input-placeholder:rgba(0, 0, 0, 0.40);
     --dark-mode-background:#262425;
     --text-color: #323232;
@@ -496,7 +497,7 @@ footer a i{
         display: block;
         width: 30px;
         height: 5px;
-        background-color: black;
+        background-color: var(--burger-color);
     }
 
     .bar_burger_menu::after,
@@ -506,7 +507,7 @@ footer a i{
         position: absolute;
         width: 30px;
         height: 5px;
-        background-color: black;
+        background-color: var(--burger-color);
     }
 
     .bar_burger_menu::after {
@@ -558,6 +559,8 @@ footer a i{
 
 @media (max-width: 600px) {
 
+
+
     body {
 
         background: linear-gradient(152deg, #a6d4f966 10%, #8ebfea 10%, #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
@@ -569,6 +572,7 @@ footer a i{
 
     h2 {
         font-size: 1.5em;
+        margin: 0 0 20px 0;
     }
 
     #section_skills {
@@ -614,7 +618,7 @@ footer a i{
     }
 
     footer .fa-github-square{
-        color: #a9a8a8;
+        color: #6e5494;
     }
 
     

@@ -8,6 +8,8 @@ const linkNav = document.querySelectorAll(".link_nav");
 const input = document.querySelectorAll("input");
 const labelIcon = document.querySelectorAll("i");
 const titleBorder = document.querySelector(".title_text_top");
+const burger = document.querySelector('.bar_burger_menu')
+
 
 //variable for back to top
 const btnBackToTop = document.getElementById("btn_back_top");
@@ -39,6 +41,29 @@ function changeColorInsideInput() {
 
 }
 
+function changeColorBurger() {
+    if (body.classList.contains('dark_mode_body')) {
+        document.documentElement.style.setProperty(
+            "--burger-color",
+            "#e6e6e6"
+        );   
+        document.documentElement.style.setProperty(
+            "--burger-color",
+            "#e6e6e6"
+        );
+    } else {
+        document.documentElement.style.setProperty(
+            "--burger-color",
+            "#323232"
+        ); 
+        document.documentElement.style.setProperty(
+            "--burger-color",
+            "#323232"
+        ); 
+    }
+
+}
+
 
 //toggle switch dark/light mode
 btnDarkMode.addEventListener("click", () => {
@@ -47,6 +72,8 @@ btnDarkMode.addEventListener("click", () => {
     divInsideBtnDarkMode.classList.toggle("div_inside_dark_mode");
     //style body
     body.classList.toggle("dark_mode_body");
+    burger.classList.toggle('text_ligth_color_dark_mode');
+    changeColorBurger();
     //style border
     titleBorder.classList.toggle("border_dark_mode");
     //style nav
