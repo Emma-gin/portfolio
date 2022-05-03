@@ -238,12 +238,8 @@ h2 {
 
 /* section_skills */
 
-#section_skills {
-    height: 100vh;
-}
 
 .container_all_skills {
-    height: 90vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -425,7 +421,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 90px;
     font-size: 1.7rem;
     margin-top: 60px;
 }
@@ -437,6 +433,14 @@ footer a {
 footer a i{
     font-size: 2em;
     margin: 0.2em;
+}
+
+footer .fa-linkedin{
+    color: #1293d2 ;
+}
+
+footer .fa-github-square{
+    color: #6e5494;
 }
 
 
@@ -467,7 +471,7 @@ footer a i{
         left: 0;
         padding: 0;
         position: fixed;
-        background-color: rgb(128, 128, 128);
+        background-color: #8ebfea;
         z-index: 1;
     }
 
@@ -559,19 +563,17 @@ footer a i{
 
 @media (max-width: 600px) {
 
-
-
     body {
-
         background: linear-gradient(152deg, #a6d4f966 10%, #8ebfea 10%, #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
     }
+
 
     .animated_title{
         font-size: 2em;
     }
 
     section{
-        margin: 0.5em 0;
+        margin: 0 0 1em 0;
     }
 
     h2 {
@@ -579,9 +581,6 @@ footer a i{
         margin: 0 0 20px 0;
     }
 
-    #section_skills {
-        height: 200vh;
-    }
 
     .container_all_skills {
         height: 100%;
@@ -627,14 +626,6 @@ footer a i{
     /* section contact */
     form {
         width: 100%;
-    }
-
-    footer .fa-linkedin{
-        color: #1293d2 ;
-    }
-
-    footer .fa-github-square{
-        color: #6e5494;
     }
 
     
