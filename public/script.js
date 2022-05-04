@@ -64,6 +64,20 @@ function changeColorBurger() {
 
 }
 
+function changeColorNavBarResponsive() {
+    if (body.classList.contains('dark_mode_body')) {
+        document.documentElement.style.setProperty(
+            "--bg-color-nav-responsive",
+            "#3b3a3b"
+        );   
+    } else {
+        document.documentElement.style.setProperty(
+            "--bg-color-nav-responsive",
+            "#8ebfea"
+        ); 
+    }
+}
+
 
 //toggle switch dark/light mode
 btnDarkMode.addEventListener("click", () => {
@@ -74,6 +88,7 @@ btnDarkMode.addEventListener("click", () => {
     body.classList.toggle("dark_mode_body");
     burger.classList.toggle('text_ligth_color_dark_mode');
     changeColorBurger();
+    changeColorNavBarResponsive();
     //style border
     titleBorder.classList.toggle("border_dark_mode");
     //style nav

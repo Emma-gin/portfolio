@@ -6,19 +6,32 @@
 
 :root {
     font-size: 10px;
-    --burger-color:#323232;
-    --input-placeholder:rgba(0, 0, 0, 0.40);
-    --dark-mode-background:#262425;
-    --text-color: #323232;
+    --burger-color: #494848;
+    --bg-color-nav-responsive: #8ebfea;
+    --input-placeholder: rgba(0, 0, 0, 0.4);
+    --dark-mode-background: #262425;
+    --text-color: #252525;
     --text-color-dark-mode: #e6e6e6;
-    --decoration-gradient:linear-gradient(152deg, rgba(0,0,0,1) 0%, rgba(128,128,128,1) 0%, rgba(4,242,224,1) 100%);
+    --decoration-gradient: linear-gradient(
+        152deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(128, 128, 128, 1) 0%,
+        rgba(4, 242, 224, 1) 100%
+    );
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: var(--text-color);
     cursor: default;
-    background: linear-gradient(152deg, #a6d4f966 20%, #8ebfea 20%, #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
+    background: linear-gradient(
+        152deg,
+        #a6d4f966 20%,
+        #8ebfea 20%,
+        #51b4f1 40%,
+        #1f87c7 80%,
+        #0d4088 100%
+    );
 }
 
 /* dark mode */
@@ -55,7 +68,7 @@ body {
 }
 
 .div_dark_mode {
-    background-color: var(--text-color-dark-mode) ;
+    background-color: var(--text-color-dark-mode);
     display: flex;
     align-items: flex-end;
 }
@@ -64,7 +77,7 @@ body {
     background-color: black;
 }
 
-.link_nav_dark_mode{
+.link_nav_dark_mode {
     color: var(--text-color-dark-mode) !important;
 }
 
@@ -74,15 +87,15 @@ body {
     box-shadow: 0 0 0 100px var(--dark-mode-background) inset !important;
 }
 
-.text_dark_color_dark_mode{
+.text_dark_color_dark_mode {
     color: var(--text-color);
 }
 
-.text_ligth_color_dark_mode{
+.text_ligth_color_dark_mode {
     color: var(--text-color-dark-mode) !important;
 }
 
-.border_dark_mode{
+.border_dark_mode {
     border-bottom: 1px solid var(--text-color-dark-mode) !important;
     color: var(--text-color-dark-mode);
 }
@@ -95,8 +108,8 @@ body {
     right: 0;
     cursor: pointer;
     border: none;
-    font-size: 3.9rem;
-    padding: 0 10px;
+    font-size: 3rem;
+    padding:  10px;
     background-color: transparent;
 }
 
@@ -147,32 +160,31 @@ nav ul li {
     background: var(--decoration-gradient);
 }
 
-.burger_menu{
+.burger_menu {
     display: none;
 }
 
-
 /* animation title */
-@keyframes showTitleTopText{
+@keyframes showTitleTopText {
     0% {
-        transform: translate3d(0, 100%,0);
+        transform: translate3d(0, 100%, 0);
     }
-    100%{
-        transform: translate3d(0,0,0);
-    }
-}
-
-@keyframes showTitleBottomText{
-    0%{
-        transform: translate3d(0, -100%,0);
-    }
-    100%{
-        transform: translate3d(0,0,0);
+    100% {
+        transform: translate3d(0, 0, 0);
     }
 }
 
-.animated_title{
-    font-family: 'Updock', 'Roboto', sans-serif;
+@keyframes showTitleBottomText {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animated_title {
+    font-family: "Updock", "Roboto", sans-serif;
     font-size: 3em;
     height: 60vmin;
     width: 70vmin;
@@ -198,7 +210,7 @@ nav ul li {
     display: block;
 }
 
-.animated_title > div.title_text_top{
+.animated_title > div.title_text_top {
     border-bottom: 1px solid #000;
     top: 0;
 }
@@ -211,11 +223,11 @@ nav ul li {
     transform: translate(0, 100%);
 }
 
-.animated_title > div.title_text_bottom{
+.animated_title > div.title_text_bottom {
     bottom: 0;
 }
 
-.animated_title > div.title_text_bottom div{
+.animated_title > div.title_text_bottom div {
     animation: showTitleBottomText 0.5s;
     animation-delay: 1.75s;
     animation-fill-mode: forwards;
@@ -237,7 +249,6 @@ h2 {
 }
 
 /* section_skills */
-
 
 .container_all_skills {
     display: flex;
@@ -261,9 +272,9 @@ h2 {
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.container_skills:hover{
-    background: linear-gradient( #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
-    box-shadow: -10px  5px 5px rgba(0, 0, 0, 0.5);
+.container_skills:hover {
+    background: linear-gradient(#51b4f1 40%, #1f87c7 80%, #0d4088 100%);
+    box-shadow: -10px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .container_skills_1,
@@ -303,9 +314,11 @@ h2 {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+    font-size: 1em;
 }
 
-.container_text_project{
+.container_text_project {
     height: 100px;
     display: flex;
     flex-direction: column;
@@ -378,14 +391,14 @@ textarea {
     background-color: transparent;
 }
 
-::placeholder{
+::placeholder {
     color: var(--input-placeholder);
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 100px #4198CE inset;
-    -moz-box-shadow: 0 0 0 100px #4198CE inset;
-    box-shadow: 0 0 0 100px #4198CE inset;
+    -webkit-box-shadow: 0 0 0 100px #4198ce inset;
+    -moz-box-shadow: 0 0 0 100px #4198ce inset;
+    box-shadow: 0 0 0 100px #4198ce inset;
 }
 
 textarea {
@@ -403,15 +416,14 @@ textarea {
     cursor: pointer;
     padding: 0.8em;
     border-radius: 1em;
-    background-color: #ACD1F2;
+    background-color: #acd1f2;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
 }
 
-.btn_form:focus{
+.btn_form:focus {
     box-shadow: -10px -5px 5px rgba(0, 0, 0, 0.5);
     padding: 1em;
-
 }
 
 /* footer */
@@ -430,28 +442,22 @@ footer a {
     text-decoration: none;
 }
 
-footer a i{
+footer a i {
     font-size: 2em;
     margin: 0.2em;
 }
 
-footer .fa-linkedin{
-    color: #1293d2 ;
+footer .fa-linkedin {
+    color: #1293d2;
 }
 
-footer .fa-github-square{
-    color: #6e5494;
+footer .fa-github-square {
+    color: #333;
 }
-
-
 
 /* responsive */
 
 @media (max-width: 1000px) {
-    nav {
-        display: none;
-    }
-
     .home {
         display: flex;
         flex-direction: row;
@@ -459,9 +465,8 @@ footer .fa-github-square{
         align-items: center;
     }
 
-    h1 {
-        font-size: 1.5em;
-        margin: 0;
+    nav {
+        display: none;
     }
 
     .nav_block {
@@ -471,7 +476,7 @@ footer .fa-github-square{
         left: 0;
         padding: 0;
         position: fixed;
-        background-color: #8ebfea;
+        background-color: var(--bg-color-nav-responsive);
         z-index: 1;
     }
 
@@ -535,24 +540,20 @@ footer .fa-github-square{
         transform: rotate(-45deg);
         transition: all 0.5s ease-in-out;
     }
-
     /* section skills */
+    .container_skills {
+        width: 150px;
+        height: 150px;
+    }
 
     .container_all_skills {
         justify-content: center;
     }
 
-    .container_skills_1,
-    .container_skills_3,
-    .container_skills_5 {
-        margin-top: 0;
-        margin-bottom: 20px;
+    .container_project a{
+        font-size: 0.75em;
     }
 
-    .container_skills_2,
-    .container_skills_4 {
-        margin-bottom: 20px;
-    }
 
     /* section contact */
 
@@ -562,17 +563,22 @@ footer .fa-github-square{
 }
 
 @media (max-width: 600px) {
-
     body {
-        background: linear-gradient(152deg, #a6d4f966 10%, #8ebfea 10%, #51b4f1 40%, #1f87c7 80%, #0d4088 100%);
+        background: linear-gradient(
+            152deg,
+            #a6d4f966 10%,
+            #8ebfea 10%,
+            #51b4f1 40%,
+            #1f87c7 80%,
+            #0d4088 100%
+        );
     }
 
-
-    .animated_title{
+    .animated_title {
         font-size: 2em;
     }
 
-    section{
+    section {
         margin: 0 0 1em 0;
     }
 
@@ -580,7 +586,6 @@ footer .fa-github-square{
         font-size: 1.5em;
         margin: 0 0 20px 0;
     }
-
 
     .container_all_skills {
         height: 100%;
@@ -592,7 +597,7 @@ footer .fa-github-square{
         height: 150px;
     }
 
-    .container_skills:hover{
+    .container_skills:hover {
         background: var(--text-color-dark-mode);
         box-shadow: none;
     }
@@ -600,13 +605,12 @@ footer .fa-github-square{
     .container_skills_1,
     .container_skills_3,
     .container_skills_5 {
-        margin-top: 0;
-        margin-bottom: 5px;
+        margin: 0 150px 20px 0;
     }
 
     .container_skills_2,
     .container_skills_4 {
-        margin-bottom: 5px;
+        margin: 0 0 20px 150px;
     }
 
     /* section projects */
@@ -618,15 +622,15 @@ footer .fa-github-square{
         align-items: center;
     }
 
-    .container_project{
+    .container_project {
         margin-bottom: 1em;
         width: 70%;
     }
+
+
 
     /* section contact */
     form {
         width: 100%;
     }
-
-    
 }
