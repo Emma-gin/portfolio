@@ -605,12 +605,12 @@ footer .fa-github-square {
     .container_skills_1,
     .container_skills_3,
     .container_skills_5 {
-        margin: 0 150px 20px 0;
+        margin: 0 150px 10px 0;
     }
 
     .container_skills_2,
     .container_skills_4 {
-        margin: 0 0 20px 150px;
+        margin: 0 0 10px 150px;
     }
 
     /* section projects */
