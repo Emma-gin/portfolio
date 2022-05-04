@@ -154,7 +154,6 @@ contactForm.addEventListener("submit", (e) => {
         subject: subject.value,
         message: message.value,
     };
-    console.log(formData);
     //AJAX request
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "/");
