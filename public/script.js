@@ -189,10 +189,8 @@ contactForm.addEventListener("submit", (e) => {
             alert("Le champ 'Sujet' contient une erreur .");
         } else if (xhr.responseText == "error email") {
             alert("Le champ 'Email' contient une erreur .");
-        } else if (xhr.responseText == "error message") {
-            alert("Le champ 'Message' contient une erreur .");
         } else {
-            alert("Une erreur est survenue");
+            alert("Une erreur est survenue, merci de rééssayer plus tard.");
         }
     };
     //must be send as string format

@@ -59,11 +59,10 @@ app.post("/", (req, res) => {
             res.send("error first name");
         } else if (!validator.isAlphanumeric(subject)) {
             res.send("error sujet");
-        } else if (!validator.isAlphanumeric(message)) {
-            res.send("error message");
         } else if (!validator.isEmail(email)) {
             res.send("error email");
-        } else {
+        }
+        else {
             res.send("success!!!");
         }
     });
