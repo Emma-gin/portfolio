@@ -14,16 +14,16 @@ app.get("/", (req, res) => {
 });
 
 const transporter = nodemailer.createTransport({
-    host: process.env.HOST,
-    port: 25,
+    host: "smtp.hostinger.com",
+    port: 465,
     secure: true,
     logger: true,
     debug: true,
     ignoreTLS: true,
 
     auth: {
-        user: process.env.USER,
-        pass: process.env.PASS,
+        user: "contact@emma-dufrenay.com",
+        pass: "@Em_m@*@69",
     },
 
     // host: "smtp.mailtrap.io",
