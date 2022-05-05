@@ -23,20 +23,28 @@ app.post('/', (req, res) => {
     let message = req.body.message;
 
     const transporter = nodemailer.createTransport({
-        host: process.env.HOST,
-        port: 587,
-        secure: false,
+        // host: process.env.HOST,
+        // port: 587,
+        // secure: false,
 
     
+        // auth: {
+        //     user:process.env.USER ,
+        //     pass: process.env.PASSWORD,
+        // },
+
+        host: "smtp.mailtrap.io",
+        port: 2525,
+    
         auth: {
-            user:process.env.USER ,
-            pass: process.env.PASSWORD,
+            user: process.env.USER,
+            pass: process.env.PASS,
         },
     })
 
     const mailOptions = {
-        from: process.env.EMAIL_FROM,
-        to: process.env.EMAIL_TO,
+        from: process.env.EMAIL,
+        to: process.env.EMAIL,
         subject: `Message from ${email}: ${subject}`,
         text: message
     }
