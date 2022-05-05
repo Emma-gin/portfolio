@@ -44,7 +44,7 @@ app.post("/", (req, res) => {
     let message = req.body.message;
 
     const mailOptions = {
-        from: process.env.EMAIL_FROM + email,
+        from: process.env.EMAIL_FROM,
         to: process.env.EMAIL_TO,
         subject: `Message de: ${email}<br>Objet: ${subject}`,
         text:  `<p style="padding:2%">${message}</p>` ,
