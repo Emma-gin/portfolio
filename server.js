@@ -46,8 +46,8 @@ app.post("/", (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_FROM,
         to: process.env.EMAIL_TO,
-        subject: `Message de: ${email}<br>Objet: ${subject}`,
-        text:  `<p style="padding:2%">${message}</p>` ,
+        subject: `Message de: ${email}, Objet: ${subject}`,
+        html:  `<p style="padding:2%">${message}</p>` ,
     };
 
     transporter.sendMail(mailOptions, (error) => {
