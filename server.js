@@ -20,6 +20,9 @@ const transporter = nodemailer.createTransport({
     host: process.env.HOST,
     port: 465,
     secure: true,
+    logger: true,
+    debug: true,
+    ignoreTLS: true,
 
 
     auth: {
