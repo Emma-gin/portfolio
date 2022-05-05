@@ -15,6 +15,36 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
 });
 
+
+const transporter = nodemailer.createTransport({
+    // host: process.env.HOST,
+    // port: 587,
+    // secure: false,
+
+
+    // auth: {
+    //     user:process.env.USER ,
+    //     pass: process.env.PASSWORD,
+    // },
+
+    host: "smtp.mailtrap.io",
+    port: 2525,
+
+    auth: {
+        user: process.env.USER,
+        pass: process.env.PASS,
+    },
+});
+
+
+transporter.verify(function (err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Server is ready to take our message");
+    }
+});
+
 app.post('/', (req, res) => {
     let lastName = req.body.lastName;
     let firstName = req.body.firstName;
@@ -22,25 +52,7 @@ app.post('/', (req, res) => {
     let subject = req.body.subject;
     let message = req.body.message;
 
-    const transporter = nodemailer.createTransport({
-        // host: process.env.HOST,
-        // port: 587,
-        // secure: false,
 
-    
-        // auth: {
-        //     user:process.env.USER ,
-        //     pass: process.env.PASSWORD,
-        // },
-
-        host: "smtp.mailtrap.io",
-        port: 2525,
-    
-        auth: {
-            user: process.env.USER,
-            pass: process.env.PASS,
-        },
-    })
 
     const mailOptions = {
         from: process.env.EMAIL,
