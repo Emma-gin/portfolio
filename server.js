@@ -47,7 +47,7 @@ app.post("/", (req, res) => {
         from: process.env.EMAIL_FROM,
         to: process.env.EMAIL_TO,
         subject: `Message de: ${email}, Objet: ${subject}`,
-        html:  `<p style="padding:2%">${message}</p>` ,
+        text:  `<p style="padding:2%">${message}</p>` ,
     };
 
     transporter.sendMail(mailOptions, (error) => {
