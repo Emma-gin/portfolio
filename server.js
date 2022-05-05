@@ -22,8 +22,8 @@ const transporter = nodemailer.createTransport({
     ignoreTLS: true,
 
     auth: {
-        user: "contact@emma-dufrenay.com",
-        pass: "@Em_m@*@69",
+        user: process.env.USER,
+        pass: process.env.PASS,
     },
 
     // host: "smtp.mailtrap.io",
