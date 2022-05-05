@@ -21,10 +21,9 @@
     <body>
         <header id="home" class="home">
             <nav id="nav_bar">
+
+                    <span  class="nav_pseudo">Emma-gin</span>
                 <ul>
-                    <li>
-                        <a class="link_nav" href="#home">Accueil</a>
-                    </li>
                     <li>
                         <a class="link_nav" href="#section_skills"
                             >Compétences</a
@@ -48,15 +47,23 @@
                     <div>Bienvenue</div>
                 </div>
             </h1>
+            <div class="container_bg"></div>
         </header>
 
         <button id="btn_burger_menu" class="burger_menu">
             <span class="bar_burger_menu"></span>
         </button>
+
         <button id="btn_back_top" class="btn_back_top"><i class="fa-solid fa-circle-arrow-up"></i></button>
+
         <button class="btn_dark_mode" id="btn_dark_mode">
-            <div id="div_btn_dark" class="div_btn_dark">
-                <div id="div_btn_dark_inside" class="div_btn_dark_inside"></div>
+            <div class="container_icon_sun">
+
+                <i class="fa-regular fa-sun"></i>
+            </div>
+            <div class="container_icon_moon">
+
+                <i class="fa-regular fa-moon"></i>
             </div>
         </button>
 
@@ -64,41 +71,56 @@
             <section id="section_skills">
                 <h2>Compétences</h2>
                 <div class="container_all_skills">
+
+
                     <div
                         id="container_skills"
                         data-aos="fade-up-right"
                         class="container_skills container_skills_1"
-                    >
-                        <span>HTML5</span>
-                        <span>CSS3</span>
+                    >                   
+                            <img class="icon_html" src="assets/icones/html5.png" alt="icône HTML5">
+                            <img class="icon_css" src="assets/icones/css3.png" alt="icône CSS3">
                     </div>
+
+
                     <div
                         data-aos="fade-up-right"
                         class="container_skills container_skills_2"
                     >
-                        <span>Javascript</span>
-                        <span>JQuery</span>
-                        <span>VueJS</span>
-                        <span>Node JS</span>
+                        <div class="container1_javascript">
+                            <img class="icon_js" src="assets/icones/javascript.png" alt="icône Javascript">
+                            <img class="icon_nodejs" src="assets/icones/nodejs.png" alt="icône Node.js">
+                        </div>
+                        <div class="container2_javascript">
+                            <img class="icon_jquery" src="assets/icones/jquery.png" alt="icône jQuery">
+                            <img class="icon_vuejs" src="assets/icones/vuejs.png" alt="icône VueJS">
+                        </div>
                     </div>
+
+
                     <div
                         data-aos="fade-up"
                         class="container_skills container_skills_3"
                     >
-                        <span>SQL</span>
+                        <img class="icon_sql" src="assets/icones/mongodb(1).png" alt="icône mongoDB">
+                        <img class="icon_sql" src="assets/icones/sql.png" alt="icône SQL">
                     </div>
+
+
                     <div
                         data-aos="fade-up-left"
                         class="container_skills container_skills_4"
                     >
-                        <span>PHP</span>
-                        <span>Symfony</span>
+                        <img class="icon_php" src="assets/icones/php.png" alt="icône php">
+                        <img src="assets/icones/symfony.png" alt="icône Symfony">
                     </div>
+
+
                     <div
                         data-aos="fade-up-left"
                         class="container_skills container_skills_5"
                     >
-                        <span>GitHub</span>
+                        <img src="assets/icones/github.png" alt="icône github">
                     </div>
                 </div>
             </section>

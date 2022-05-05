@@ -6,8 +6,11 @@
 
 :root {
     font-size: 10px;
+    --url-background-img: url('/assets/images/fond1.jpg');
+    --display-btn-moon-dark-mode:none;
     --burger-color: #494848;
-    --bg-color-nav-responsive: #8ebfea;
+    --bg-color-nav-bar:#8ebfea;
+    /* --bg-color-nav-responsive: #8ebfea; */
     --input-placeholder: rgba(0, 0, 0, 0.4);
     --dark-mode-background: #262425;
     --text-color: #252525;
@@ -27,12 +30,13 @@ body {
     background: linear-gradient(
         152deg,
         #a6d4f966 20%,
-        #8ebfea 20%,
-        #51b4f1 40%,
-        #1f87c7 80%,
+        #7fb5e4 20%,
+        #156699 40%,
+        #46aeef 80%,
         #0d4088 100%
     );
 }
+
 
 /* dark mode */
 .btn_dark_mode {
@@ -45,21 +49,15 @@ body {
     padding: 10px;
 }
 
-.div_btn_dark {
-    width: 20px;
-    height: 40px;
-    border-radius: 15%;
-    background: var(--dark-mode-background);
-    display: flex;
-    justify-content: center;
+.container_icon_sun, .container_icon_moon{
+    font-size: 2em;
+}
+.container_icon_moon{
+    display: none;
 }
 
-.div_btn_dark_inside {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: white;
-    margin: 3px;
+.container_icon_sun{
+    color: var(--text-color);
 }
 
 .dark_mode_body {
@@ -85,10 +83,6 @@ body {
     -webkit-box-shadow: 0 0 0 100px var(--dark-mode-background) inset !important;
     -moz-box-shadow: 0 0 0 100px var(--dark-mode-background) inset !important;
     box-shadow: 0 0 0 100px var(--dark-mode-background) inset !important;
-}
-
-.text_dark_color_dark_mode {
-    color: var(--text-color);
 }
 
 .text_ligth_color_dark_mode {
@@ -121,13 +115,38 @@ body {
     flex-direction: column;
     justify-content: space-between;
     font-size: 2rem;
+    background-color: var(--bg-color-nav-bar);
+
+}
+
+.container_bg{
+    
+    height: 100vh;
+    background-size: cover;
+    background-position: bottom;
+    /* polygon(x y, x y, x y, x y) ici 4 côtés avec les coordonnées sur les axes x et y*/
+    clip-path: polygon(0 90%, 100% -50%, 100% 100%, 0 100%);
 }
 
 nav {
+    background-color: var(--bg-color-nav-bar);
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 20px 0 20px 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
 }
+
+.nav_pseudo{
+    padding: 10px;
+    font-family:"Updock", "Roboto", sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+}
+
 
 nav ul {
     width: 50%;
@@ -157,7 +176,7 @@ nav ul li {
     left: 0;
     height: 3px;
     border-radius: 2px;
-    background: var(--decoration-gradient);
+    background: #065fbf72;
 }
 
 .burger_menu {
@@ -187,10 +206,10 @@ nav ul li {
     font-family: "Updock", "Roboto", sans-serif;
     font-size: 3em;
     height: 60vmin;
-    width: 70vmin;
+    width: 60vmin;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 20%;
     transform: translate(-50%, -50%);
 }
 
@@ -248,44 +267,23 @@ h2 {
     font-size: 2em;
 }
 
-/* section_skills */
 
-.container_all_skills {
+.container_all_skills{
+    margin: 10% auto;
+    width: 90%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 1em;
-    overflow: hidden;
 }
 
-.container_skills {
-    width: 200px;
-    height: 200px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    background-color: #e6e6e6;
-    color: black;
-    border-radius: 50%;
+.container_skills{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.container_skills:hover {
-    background: linear-gradient(#51b4f1 40%, #1f87c7 80%, #0d4088 100%);
-    box-shadow: -10px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.container_skills_1,
-.container_skills_3,
-.container_skills_5 {
-    margin-top: 10%;
-}
-
-.container_skills_2,
-.container_skills_4 {
-    margin-bottom: 20%;
+.container_skills img{
+    width: 80px;
+    height: 80px;
 }
 
 /* section_projects */
@@ -448,7 +446,7 @@ footer a i {
 }
 
 footer .fa-linkedin {
-    color: #1293d2;
+    color: #0A66C2;
 }
 
 footer .fa-github-square {
@@ -476,7 +474,7 @@ footer .fa-github-square {
         left: 0;
         padding: 0;
         position: fixed;
-        background-color: var(--bg-color-nav-responsive);
+        background-color: var(--bg-color-nav-bar);
         z-index: 1;
     }
 

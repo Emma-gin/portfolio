@@ -1,15 +1,15 @@
 const body = document.body;
 //variables for dark mode
 const btnDarkMode = document.getElementById("btn_dark_mode");
-const divBtnDarkMode = document.getElementById("div_btn_dark");
-const divInsideBtnDarkMode = document.getElementById("div_btn_dark_inside");
+const sunIcon = document.querySelector(".container_icon_sun");
+const moonIcon = document.querySelector(".container_icon_moon");
 const containerSkills = document.getElementById("container_skills");
 const linkNav = document.querySelectorAll(".link_nav");
 const input = document.querySelectorAll("input");
 const labelIcon = document.querySelectorAll("i");
 const titleBorder = document.querySelector(".title_text_top");
-const burger = document.querySelector('.bar_burger_menu')
-
+const burger = document.querySelector(".bar_burger_menu");
+const containerBackgroundImg = document.querySelector(".container_bg");
 
 //variable for back to top
 const btnBackToTop = document.getElementById("btn_back_top");
@@ -26,78 +26,52 @@ let email = document.getElementById("email");
 let subject = document.getElementById("subject");
 let message = document.getElementById("message");
 
-function changeColorInsideInput() {
-    if (body.classList.contains('dark_mode_body')) {
-        document.documentElement.style.setProperty(
-            "--input-placeholder",
-            "#e6e6e6"
-        );        
+//functions for dark mode
+function changeIconBtnDarkMode() {
+    if (body.classList.contains("dark_mode_body")) {
+        sunIcon.style.display = "none";
+        moonIcon.style.display = "block";
     } else {
-        document.documentElement.style.setProperty(
-            "--input-placeholder",
-            "#323232"
-        ); 
+        sunIcon.style.display = "block";
+        moonIcon.style.display = "none";
     }
-
 }
 
-function changeColorBurger() {
-    if (body.classList.contains('dark_mode_body')) {
+//set background image for header
+containerBackgroundImg.style.backgroundImage = "url('assets/images/fond1.jpg')";
+function changeImgBackground() {
+    if (body.classList.contains("dark_mode_body")) {
+        containerBackgroundImg.style.backgroundImage =
+            "url('assets/images/fond2.jpg')";
+    } else {
+        containerBackgroundImg.style.backgroundImage =
+            "url('assets/images/fond1.jpg')";
+    }
+}
+
+function changeNavBarColorBackground() {
+    if (body.classList.contains("dark_mode_body")) {
         document.documentElement.style.setProperty(
-            "--burger-color",
-            "#e6e6e6"
-        );   
-        document.documentElement.style.setProperty(
-            "--burger-color",
-            "#e6e6e6"
+            "--bg-color-nav-bar",
+            "#343333"
         );
     } else {
         document.documentElement.style.setProperty(
-            "--burger-color",
-            "#323232"
-        ); 
-        document.documentElement.style.setProperty(
-            "--burger-color",
-            "#323232"
-        ); 
-    }
-
-}
-
-function changeColorNavBarResponsive() {
-    if (body.classList.contains('dark_mode_body')) {
-        document.documentElement.style.setProperty(
-            "--bg-color-nav-responsive",
-            "#3b3a3b"
-        );   
-    } else {
-        document.documentElement.style.setProperty(
-            "--bg-color-nav-responsive",
+            "--bg-color-nav-bar",
             "#8ebfea"
-        ); 
+        );
     }
 }
 
+function changeColorNavBurger() {
+    if (body.classList.contains("dark_mode_body")) {
+        document.documentElement.style.setProperty("--burger-color", "#e6e6e6");
+    } else {
+        document.documentElement.style.setProperty("--burger-color", "#323232");
+    }
+}
 
-//toggle switch dark/light mode
-btnDarkMode.addEventListener("click", () => {
-    //style btn darkmode
-    divBtnDarkMode.classList.toggle("div_dark_mode");
-    divInsideBtnDarkMode.classList.toggle("div_inside_dark_mode");
-    //style body
-    body.classList.toggle("dark_mode_body");
-    burger.classList.toggle('text_ligth_color_dark_mode');
-    changeColorBurger();
-    changeColorNavBarResponsive();
-    //style border
-    titleBorder.classList.toggle("border_dark_mode");
-    //style nav
-    linkNav.forEach((element) => {
-        element.classList.toggle("link_nav_dark_mode");
-    });
-    //style skills
-    containerSkills.classList.toggle("container_skills_shadow_dark_mode");
-    //style form
+function changeFormDarkMode() {
     input.forEach((e) => {
         e.classList.toggle("input_dark_mode");
         e.classList.toggle("border_dark_mode");
@@ -105,6 +79,46 @@ btnDarkMode.addEventListener("click", () => {
     labelIcon.forEach((icon) => {
         icon.classList.toggle("text_ligth_color_dark_mode");
     });
+}
+
+function changeColorInsideInput() {
+    if (body.classList.contains("dark_mode_body")) {
+        document.documentElement.style.setProperty(
+            "--input-placeholder",
+            "#e6e6e6"
+        );
+    } else {
+        document.documentElement.style.setProperty(
+            "--input-placeholder",
+            "#323232"
+        );
+    }
+}
+
+//toggle switch dark/light mode
+btnDarkMode.addEventListener("click", () => {
+    //style body
+    body.classList.toggle("dark_mode_body");
+    changeImgBackground();
+
+    //style btn darkmode
+    changeIconBtnDarkMode();
+
+    //style border title
+    titleBorder.classList.toggle("border_dark_mode");
+
+    //style nav
+    changeColorNavBurger();
+    changeNavBarColorBackground();
+    linkNav.forEach((element) => {
+        element.classList.toggle("link_nav_dark_mode");
+    });
+
+    //style skills
+    containerSkills.classList.toggle("container_skills_shadow_dark_mode");
+
+    //style form
+    changeFormDarkMode();
     changeColorInsideInput();
 });
 
