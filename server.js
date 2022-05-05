@@ -17,23 +17,23 @@ app.get('/', (req, res) => {
 
 
 const transporter = nodemailer.createTransport({
-    // host: process.env.HOST,
-    // port: 587,
-    // secure: false,
+    host: process.env.HOST,
+    port: 587,
+    secure: false,
 
-
-    // auth: {
-    //     user:process.env.USER ,
-    //     pass: process.env.PASSWORD,
-    // },
-
-    host: "smtp.mailtrap.io",
-    port: 2525,
 
     auth: {
-        user: process.env.USER,
+        user:process.env.USER ,
         pass: process.env.PASS,
     },
+
+    // host: "smtp.mailtrap.io",
+    // port: 2525,
+
+    // auth: {
+    //     user: process.env.USER,
+    //     pass: process.env.PASS,
+    // },
 });
 
 
@@ -55,8 +55,8 @@ app.post('/', (req, res) => {
 
 
     const mailOptions = {
-        from: process.env.EMAIL,
-        to: process.env.EMAIL,
+        from: process.env.EMAIL_FROM,
+        to: process.env.EMAIL_TO,
         subject: `Message from ${email}: ${subject}`,
         text: message
     }
