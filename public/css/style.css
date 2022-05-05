@@ -258,18 +258,18 @@ nav ul li {
 
 section {
     font-size: 2rem;
-    margin: 2em 0;
+    margin: 4em 0;
 }
 
 h2 {
     text-align: center;
-    margin: 30px 0;
     font-size: 2em;
 }
 
 
 .container_all_skills{
-    margin: 10% auto;
+    margin: 0 auto;
+    height: 100vh;
     width: 90%;
     display: flex;
     justify-content: space-evenly;
@@ -538,19 +538,6 @@ footer .fa-github-square {
         transform: rotate(-45deg);
         transition: all 0.5s ease-in-out;
     }
-    /* section skills */
-    .container_skills {
-        width: 150px;
-        height: 150px;
-    }
-
-    .container_all_skills {
-        justify-content: center;
-    }
-
-    .container_project a {
-        font-size: 0.75em;
-    }
 
     /* section contact */
 
@@ -589,25 +576,17 @@ footer .fa-github-square {
         flex-direction: column;
     }
 
-    .container_skills {
-        width: 150px;
-        height: 150px;
-    }
 
-    .container_skills:hover {
-        background: var(--text-color-dark-mode);
-        box-shadow: none;
-    }
 
     .container_skills_1,
     .container_skills_3,
     .container_skills_5 {
-        margin: 0 150px 10px 0;
+        margin: 0 120px 5px 0;
     }
 
     .container_skills_2,
     .container_skills_4 {
-        margin: 0 0 10px 150px;
+        margin: 0 0 5px 120px;
     }
 
     /* section projects */
