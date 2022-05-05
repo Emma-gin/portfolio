@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.hostinger.com",
+    host: process.env.HOST,
     port: 465,
     secure: true,
     logger: true,
@@ -26,13 +26,6 @@ const transporter = nodemailer.createTransport({
         pass: process.env.PASS,
     },
 
-    // host: "smtp.mailtrap.io",
-    // port: 2525,
-
-    // auth: {
-    //     user: process.env.USER,
-    //     pass: process.env.PASS,
-    // },
 });
 
 transporter.verify(function (err) {
@@ -51,10 +44,10 @@ app.post("/", (req, res) => {
     let message = req.body.message;
 
     const mailOptions = {
-        from: process.env.EMAIL_FROM,
+        from: process.env.EMAIL_FROM + email,
         to: process.env.EMAIL_TO,
-        subject: `Message from ${email}: ${subject}`,
-        text: message,
+        subject: `Message de: ${email}<br>Objet: ${subject}`,
+        text:  `<p style="padding:2%">${message}</p>` ,
     };
 
     transporter.sendMail(mailOptions, (error) => {
