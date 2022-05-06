@@ -9,12 +9,13 @@ const PORT = process.env.PORT || 8080;
 app.use(express.static("public"));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
-});
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + "/public/index.html");
+// });
 
 const transporter = nodemailer.createTransport({
-    host: process.env.HOST,
+    // host: process.env.HOST,
+    host: 'stmp hostinger.com',
     port: 465,
     secure: true,
     logger: true,

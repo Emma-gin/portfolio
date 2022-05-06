@@ -170,7 +170,7 @@ contactForm.addEventListener("submit", (e) => {
     };
     //AJAX request
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "/");
+    xhr.open("POST", "/mail.emma-dufrenay.com");
     //JSON
     xhr.setRequestHeader("content-type", "application/json");
     xhr.onload = function () {
