@@ -13,11 +13,6 @@ app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//     console.log(req.body);
-//     res.json("OK API");
-// });
-
 const transporter = nodemailer.createTransport({
     host: process.env.HOST,
     port: 465,
