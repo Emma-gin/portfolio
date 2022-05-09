@@ -10,7 +10,6 @@
     --display-btn-moon-dark-mode:none;
     --burger-color: #494848;
     --bg-color-nav-bar:#8ebfea;
-    /* --bg-color-nav-responsive: #8ebfea; */
     --input-placeholder: rgba(0, 0, 0, 0.4);
     --dark-mode-background: #262425;
     --text-color: #252525;
@@ -461,6 +460,12 @@ footer .fa-github-square {
         flex-direction: row;
         justify-content: center;
         align-items: center;
+    }
+
+    .animated_title {
+        width: 40vmin;
+        top: 30%;
+        left: 22%;
     }
 
 
