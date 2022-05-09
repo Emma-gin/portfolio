@@ -498,7 +498,7 @@ footer .fa-github-square {
         display: block;
         position: fixed;
         top: 0;
-        right: 0;
+        right: 20px;
         border: none;
         background-color: transparent;
         height: 45px;
@@ -581,8 +581,8 @@ footer .fa-github-square {
         height: 60vmin;
         width: 50vmin;
         position: absolute;
-        top: 20%;
-        left: 15%;
+        top: 25%;
+        left: 30%;
         transform: translate(-50%, -50%);
     }
 
