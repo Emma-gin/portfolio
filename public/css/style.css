@@ -579,10 +579,10 @@ footer .fa-github-square {
         font-family: "Updock", "Roboto", sans-serif;
         font-size: 2em;
         height: 60vmin;
-        width: 30vmin;
+        width: 50vmin;
         position: absolute;
         top: 20%;
-        left: 5%;
+        left: 15%;
         transform: translate(-50%, -50%);
     }
 
