@@ -169,8 +169,10 @@ contactForm.addEventListener("submit", (e) => {
         message: message.value,
     };
     //AJAX request
+    alert("ENVOI");
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "/mail.emma-dufrenay.com");
+    xhr.open("POST", "http://api.emma-dufrenay.com:8080/");
+    // xhr.open("GET", "/api");
     //JSON
     xhr.setRequestHeader("content-type", "application/json");
     xhr.onload = function () {

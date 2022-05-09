@@ -3,19 +3,23 @@ const nodemailer = require("nodemailer");
 const validator = require("validator");
 const app = express();
 require("dotenv").config();
+const cors = require("cors");
+const res = require("express/lib/response");
 
 const PORT = process.env.PORT || 8080;
+
+app.use(cors());
 
 app.use(express.static("public"));
 app.use(express.json());
 
 // app.get("/", (req, res) => {
-//     res.sendFile(__dirname + "/public/index.html");
+//     console.log(req.body);
+//     res.json("OK API");
 // });
 
 const transporter = nodemailer.createTransport({
-    // host: process.env.HOST,
-    host: 'stmp hostinger.com',
+    host: process.env.HOST,
     port: 465,
     secure: true,
     logger: true,
@@ -26,7 +30,6 @@ const transporter = nodemailer.createTransport({
         user: process.env.USER,
         pass: process.env.PASS,
     },
-
 });
 
 transporter.verify(function (err) {
@@ -38,17 +41,20 @@ transporter.verify(function (err) {
 });
 
 app.post("/", (req, res) => {
+    //
+
     let lastName = req.body.lastName;
     let firstName = req.body.firstName;
     let email = req.body.email;
     let subject = req.body.subject;
     let message = req.body.message;
 
+    // res.json(req.body);
     const mailOptions = {
         from: process.env.EMAIL_FROM,
         to: process.env.EMAIL_TO,
         subject: `Message de: ${email}, Objet: ${subject}`,
-        text:  `<p style="padding:2%">${message}</p>` ,
+        text: `<p style="padding:2%">${message}</p>`,
     };
 
     transporter.sendMail(mailOptions, (error) => {
@@ -62,8 +68,7 @@ app.post("/", (req, res) => {
             res.send("error sujet");
         } else if (!validator.isEmail(email)) {
             res.send("error email");
-        }
-        else {
+        } else {
             res.send("success!!!");
         }
     });
