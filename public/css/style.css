@@ -511,6 +511,7 @@ footer .fa-github-square {
         width: 30px;
         height: 5px;
         background-color: var(--burger-color);
+        border: 1px solid white;
     }
 
     .bar_burger_menu::after,
@@ -521,6 +522,8 @@ footer .fa-github-square {
         width: 30px;
         height: 5px;
         background-color: var(--burger-color);
+        border: 1px solid white;
+
     }
 
     .bar_burger_menu::after {
@@ -572,9 +575,16 @@ footer .fa-github-square {
         margin: 0 0 1em 0;
     }
 
-    /* h1{
-        z-index: 2;
-    } */
+    .animated_title {
+        font-family: "Updock", "Roboto", sans-serif;
+        font-size: 2em;
+        height: 60vmin;
+        width: 30vmin;
+        position: absolute;
+        top: 20%;
+        left: 5%;
+        transform: translate(-50%, -50%);
+    }
 
     h2 {
         font-size: 1.5em;
