@@ -204,8 +204,8 @@ nav ul li {
 .animated_title {
     font-family: "Updock", "Roboto", sans-serif;
     font-size: 3em;
-    height: 60vmin;
-    width: 40vmin;
+    min-height: 50%;
+    min-width: 30%;
     position: absolute;
     top: 30%;
     left: 20%;
